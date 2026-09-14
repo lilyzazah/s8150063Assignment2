@@ -1,21 +1,44 @@
 package com.example.s8150063assignment2.ui.details
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.s8150063assignment2.R
 
 class DetailsActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
         setContentView(R.layout.activity_details)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+
+        val artistName = intent.getStringExtra("artistName")
+        val albumTitle = intent.getStringExtra("albumTitle")
+        val releaseYear = intent.getIntExtra("releaseYear", 0)
+        val genre = intent.getStringExtra("genre")
+        val trackCount = intent.getIntExtra("trackCount", 0)
+        val popularTrack = intent.getStringExtra("popularTrack")
+        val description = intent.getStringExtra("description")
+
+        val tvDetails =
+            findViewById<TextView>(R.id.tvDetails)
+
+        tvDetails.text =
+            """
+Artist: $artistName
+
+Album: $albumTitle
+
+Release Year: $releaseYear
+
+Genre: $genre
+
+Tracks: $trackCount
+
+Popular Track: $popularTrack
+
+Description:
+$description
+            """.trimIndent()
     }
 }
