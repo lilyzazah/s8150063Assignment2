@@ -12,6 +12,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import android.content.Intent
 import com.example.s8150063assignment2.ui.details.DetailsActivity
+import android.widget.TextView
 
 class DashboardActivity : AppCompatActivity() {
 
@@ -43,6 +44,10 @@ class DashboardActivity : AppCompatActivity() {
 
                         val albums =
                             response.body()?.entities ?: emptyList()
+
+                        findViewById<TextView>(R.id.tvAlbumCount).text =
+                            "${albums.size} albums in your collection"
+
 
                         recyclerView.adapter = MusicAdapter(albums) { album ->
 

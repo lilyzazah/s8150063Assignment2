@@ -5,32 +5,74 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp">
+    android:background="#F2E8FF"
+    android:padding="32dp">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/ic_headphones"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NIT3213 Assignment 2"
-        android:textSize="24sp"
-        android:textStyle="bold"/>
+        android:text="Welcome back"
+        android:textStyle="bold"
+        android:textSize="36sp"
+        android:textColor="#5C2D91"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign in to your music account and keep the mix going."
+        android:textSize="18sp"
+        android:textColor="#8A5FAE"
+        android:gravity="center"
+        android:layout_marginTop="12dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textStyle="bold"
+        android:textColor="#7A518B"
+        android:layout_marginTop="36dp"/>
 
     <EditText
         android:id="@+id/etUsername"
         android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Student ID"
+        android:backgroundTint="#D8A8FF"/>
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Student ID"/>
+        android:text="Password"
+        android:textStyle="bold"
+        android:textColor="#7A518B"
+        android:layout_marginTop="20dp"/>
 
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="First Name"/>
+        android:layout_height="60dp"
+        android:hint="Student First Name"
+        android:backgroundTint="#D8A8FF"/>
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Login"/>
+        android:layout_height="60dp"
+        android:text="Log In"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="#B47AFF"/>
 
 </LinearLayout>

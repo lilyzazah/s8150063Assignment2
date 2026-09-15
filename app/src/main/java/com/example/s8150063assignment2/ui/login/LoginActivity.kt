@@ -34,6 +34,17 @@ class LoginActivity : AppCompatActivity() {
             val username = etUsername.text.toString()
             val password = etPassword.text.toString()
 
+            if(username.isBlank() || password.isBlank()) {
+
+                Toast.makeText(
+                    this,
+                    "Please enter Student ID and First Name",
+                    Toast.LENGTH_LONG
+                ).show()
+
+                return@setOnClickListener
+            }
+
             val request = LoginRequest(
                 username = username,
                 password = password
@@ -74,7 +85,7 @@ class LoginActivity : AppCompatActivity() {
 
                             Toast.makeText(
                                 this@LoginActivity,
-                                "Invalid Login",
+                                "Invalid Student ID or First Name",
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
